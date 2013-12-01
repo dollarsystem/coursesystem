@@ -1,0 +1,83 @@
+<Frame name="frame" title="欢迎" visible="true" close="exit" bounds="100,200,400,400" layout="border" pack="true"  bgcolor="#00ffffff">
+    <!--head-->
+    <Panel place="north" vertical="needed" name="head" bgcolor="#00ffffff">
+        <Label icon="outer,/Users/zhouji/Applications/Sky/SkyDrive/workfor2013/titel.PNG"/>
+    </Panel>
+    <!--content-->
+    <Panel name="allScrollPane" place="center" vertical="needed" bgcolor="#00ffffff">
+        <Panel name="teacher_main"  layout="border" enable="true" bgcolor="#00ffffff">
+            <TabbedPane name="tabbed_select" tabPlace="top" selectedIndex="0" bgcolor="#00ffffff">
+                <!--myclass-->
+                <Panel name="course_tab" title="我的课程" layout="border" bgcolor="#00ffffff">
+                    <ScrollPane name="course_scroll" place="center" vertical="needed" bgcolor="#00ffffff">
+                        <Table name="my_class_table" columns=" 星 期 , 时 间 , 地 点 , 课  程 " bgcolor="#00ffffff">
+                        </Table>
+                    </ScrollPane>
+                    <Panel name="course_icons" place="south" layout="grid,1,1" bgcolor="#00ffffff">
+                        <Panel name="cP1B" layout="flow,right" bgcolor="#00ffffff">
+                            <Button name="modify_course_detail" text="  修改课程  " enable="false"/>
+                            <Button name="record_score" text="  录入成绩  " enable="false"/>
+                        </Panel>
+                    </Panel>
+                </Panel>
+                <!--allcourse-->
+                <Panel title=" 全 校 课 程 " layout="border">
+                    <Panel place="north">
+                        <Label text=" 学 期:"/>
+                        <ComboBox name="term_combo">
+                        </ComboBox>
+                        <Label text=" 专 业:"/>
+                        <ComboBox name="faculty_combo">
+                        </ComboBox>
+                        <Button text=" 查 询 " name="all_courses_search" />
+                    </Panel>
+                    <ScrollPane place="center" vertical="needed">
+                        <Table name="all_courses_table" columns=" 课 程 编 号 , 课 程 名 称, 任 课 教 师 , 课 程 类 型 , 开 课 院 系 , 学 分 ">
+                        </Table>
+                    </ScrollPane>
+                    <Panel place="south" layout="flow,right">
+                        <Button name="all_courses_detail" text=" 详 情 " enable="false"/>
+                    </Panel>
+                </Panel>
+                <!--personalInfo-->
+                <Panel title=" 个 人 资 料 " layout="border">
+                    <ScrollPane place="center" vertical="needed" >
+                        <Panel layout="border">
+                            <Panel place = "center" layout="grid,10,3">
+                                <Panel layout="flow,center"><Label text=" 工 号 "/></Panel><Panel layout="flow,center"><Label name="info_id"/></Panel><Label/>
+                                <Panel layout="flow,center"><Label text=" 姓 名 "/></Panel><Panel layout="flow,center"><Label name="info_name"/></Panel><Label/>
+                                <Panel layout="flow,center"><Label text=" 性 别 "/></Panel><Panel layout="flow,center"><Label name="info_sex"/></Panel><Label/>
+                                <Panel layout="flow,center"><Label text=" 学 院 "/></Panel><Panel layout="flow,center"><Label name="info_faculty"/></Panel><Panel layout="flow,center"><Button name="faculty_detail" text=" 详 情 "/></Panel>
+                                <Panel layout="flow,center"><Label text=" 年 级 "/></Panel><Panel layout="flow,center"><Label name="info_grade"/></Panel><Label/>
+                                <Panel layout="flow,center"><Label text=" 邮 箱 "/></Panel><Panel layout="flow,center"><Label name="info_mailbox"/></Panel><Panel layout="flow,center"><Button name="change_mailbox" text=" 修 改 "/></Panel>
+                                <Panel layout="flow,center"><Label text=" 密 码 "/></Panel><Panel layout="flow,center"><Label name="info_password"/></Panel><Panel layout="flow,center"><Button name="change_password" text=" 修 改 "/></Panel>
+                            </Panel>
+                        </Panel>
+                    </ScrollPane>
+                </Panel>
+                <!--notice-->
+                <Panel name="notice" title="消息" layout="border" bgcolor="#00ffffff">
+                    <ScrollPane name="notice_scroll" place="center" vertical="needed" bgcolor="#00ffffff">
+                        <Table name="notice_table" columns="    发件人,    时间,    主题">
+                        </Table>
+                    </ScrollPane>
+                    <Panel place="south" layout="flow,right" bgcolor="#00ffffff">
+                        <Button text="发布通知" />
+                    </Panel>
+                </Panel>
+                
+                
+            </TabbedPane>
+        </Panel>
+    </Panel>
+    <Panel place="south" layout="flow,left">
+		<Label text="最后一次操作："></Label>
+		<Label name="last_opt" text="暂无操作..."></Label>
+	</Panel>
+    <Panel place="east" vertical="needed" name="head" bgcolor="#00ffffff">
+        <Label text="      "/>
+    </Panel>
+    <Panel place="west" vertical="needed" name="head" bgcolor="#00ffffff">
+        <Label text="      "/>
+    </Panel>
+</Frame>

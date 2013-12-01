@@ -1,0 +1,8 @@
+<Frame name="frame" title="学业进度" visible="true" close="dispose" layout="border" pack="true" center="true">
+	<Panel place="north"><Label/></Panel>
+	<Panel place="south"><Label/></Panel>
+	<Panel place="east"><Label/></Panel>
+	<Panel place="west"><Label/></Panel>
+	<ScrollPane name="progresses" place="center" vertical="needed">
+	</ScrollPane>
+</Frame>

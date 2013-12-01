@@ -1,0 +1,10 @@
+﻿<Frame name="frame" title="院系教务员详情" visible="true" close="dispose" layout="border" center="true">
+	<Panel place="north"/><Panel place="south"/><Panel place="west"/><Panel place="east"/>
+	<Panel place="center" layout="grid,5,3">
+		<Panel layout="flow,center"><Label text=" 工 号 "/></Panel><Panel layout="flow,center"><Label name="info_id"/></Panel><Panel layout="flow,center"><Button name="change_id" text=" 修 改 " enable="false"/></Panel>
+		<Panel layout="flow,center"><Label text=" 姓 名 "/></Panel><Panel layout="flow,center"><Label name="info_name"/></Panel><Panel layout="flow,center"><Button name="change_name" text=" 修 改 " enable="false"/></Panel>
+		<Panel layout="flow,center"><Label text=" 性 别 "/></Panel><Panel layout="flow,center"><Label name="info_sex"/></Panel><Panel layout="flow,center"><Button name="change_sex" text=" 修 改 " enable="false"/></Panel>
+		<Panel layout="flow,center"><Label text=" 邮 箱 "/></Panel><Panel layout="flow,center"><Label name="info_mailbox"/></Panel><Panel layout="flow,center"><Button name="change_mailbox" text=" 修 改 " enable="false"/></Panel>
+		<Panel layout="flow,center"><Label text=" 密 码 "/></Panel><Panel layout="flow,center"><Label name="info_password"/></Panel><Panel layout="flow,center"><Button name="change_password" text=" 修 改 " enable="false" /></Panel>
+	</Panel>
+</Frame>

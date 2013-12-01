@@ -16,7 +16,5 @@ public class Student implements Serializable
 	public String m_password;
 	public String m_course_ids;
 	public String m_course_scores;
-	public String m_history_course_ids;
-	public String m_history_course_scores;
 	
 }

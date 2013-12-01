@@ -1,0 +1,66 @@
+package coursesystem.server.database;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import coursesystem.unit.Faculty;
+
+class FacultyTable
+{
+	
+	public static void init() throws SQLException
+	{
+		Database.execute("create table if not exists Faculty(id,name,description);");
+	}
+
+	public static Faculty getFaculty(String p_faculty_id) throws SQLException
+	{
+		String t_sql="select * from Faculty where id='"+p_faculty_id+"';";
+		ResultSet t_records=Database.execute(t_sql);
+		if(!t_records.next())
+			return null;
+		Faculty t_faculty=new Faculty();
+		t_faculty.m_id=p_faculty_id;
+		t_faculty.m_name=t_records.getString("name");
+		t_faculty.m_description=t_records.getString("description");
+		t_faculty.fillNull();
+		return t_faculty;
+	}
+	
+	public static void setFaculty(Faculty p_faculty) throws SQLException
+	{
+		String t_sql="delete from Faculty where id='"+p_faculty.m_id+"';";
+		Database.execute(t_sql);
+		StringBuilder t_sb=new StringBuilder("insert into Faculty values('");
+		t_sb.append(p_faculty.m_id).append("','")
+			.append(p_faculty.m_name).append("','")
+			.append(p_faculty.m_description).append("');");
+		Database.execute(t_sb.toString());
+	}
+	
+	public static void removeFaculty(String p_faculty_id) throws SQLException
+	{
+		String t_sql="delete from Faculty where id='"+p_faculty_id+"';";
+		Database.execute(t_sql);
+	}
+	
+	public static List<Faculty> getAllFacultys() throws SQLException
+	{
+		ArrayList<Faculty> t_facultys=new ArrayList<Faculty>();
+		String t_sql="select * from Faculty;";
+		ResultSet t_records=Database.execute(t_sql);
+		while(t_records.next())
+		{
+			Faculty t_faculty=new Faculty();
+			t_faculty.m_id=t_records.getString("id");
+			t_faculty.m_name=t_records.getString("name");
+			t_faculty.m_description=t_records.getString("description");
+			t_faculty.fillNull();
+			t_facultys.add(t_faculty);
+		}
+		return t_facultys;
+	}
+	
+}

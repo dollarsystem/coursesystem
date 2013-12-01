@@ -1,0 +1,26 @@
+<Frame name="frame" center="true" title="登录" close="exit" layout="border" pack="true" visible="true">
+	<Panel place="center" layout="grid,4,1">
+		<Panel layout="flow,left">
+			<Label text="帐号"/>
+			<TextField name="id" chars="20"/>
+		</Panel>
+		<Panel layout="flow,left">
+			<Label text="密码"/>
+			<PasswordField name="password" chars="20"/>
+		</Panel>
+		<Panel layout="flow,right">
+			<Label text="登录类型"/>
+			<ComboBox name="type">
+				<Option text="学生"/>
+				<Option text="教师"/>
+				<Option text="院系教务员"/>
+				<Option text="教务处老师"/>
+				<Option text="系统管理员"/>
+			</ComboBox>
+		</Panel>
+		<Panel layout="flow,center">
+			<Button name="login" text="登录"/>
+		</Panel>
+	</Panel>
+</Frame>
+

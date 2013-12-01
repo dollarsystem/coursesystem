@@ -25,7 +25,6 @@ class DeanTable
 		t_dean.m_faculty_id=t_records.getString("faculty_id");
 		t_dean.m_mailbox=t_records.getString("mailbox");
 		t_dean.m_password=t_records.getString("password");
-		t_dean.fillNull();
 		return t_dean;
 	}
 

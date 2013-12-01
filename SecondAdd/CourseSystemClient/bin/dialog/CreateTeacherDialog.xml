@@ -1,0 +1,23 @@
+﻿<Frame name="frame" title="创建教师" visible="true" close="dispose" layout="border" center="true" pack="true">
+	<Panel place="north" /><Panel place="south" /><Panel place="east" />
+	<Panel place="west" layout="grid,7,1">
+		<Panel layout="flow,right"><Label text=" 工 号 "/></Panel>
+		<Panel layout="flow,right"><Label text=" 姓 名 "/></Panel>
+		<Panel layout="flow,right"><Label text=" 性 别 "/></Panel>
+		<Panel layout="flow,right"><Label text=" 院 系 "/></Panel>
+		
+		<Panel layout="flow,right"><Label text=" 邮 箱 "/></Panel>
+		<Panel layout="flow,right"><Label text=" 密 码 "/></Panel>
+		<Panel layout="flow,right">                                       </Panel>
+	</Panel>
+	<Panel place="center" layout="grid,7,1">
+		<Panel layout="flow,center"><TextField name="id" chars="20" /></Panel>
+		<Panel layout="flow,center"><TextField name="name" chars="20" /></Panel>
+		<Panel layout="flow,center"><TextField name="sex" chars="20" /></Panel>
+		<Panel layout="flow,center"><ComboBox name="teacher_faculty_combo" /></Panel>
+		
+		<Panel layout="flow,center"><TextField name="mailbox" chars="20" /></Panel>
+		<Panel layout="flow,center"><TextField name="password" chars="20" /></Panel>
+		<Panel layout="flow,right"><Button name="save" text=" 保 存 "/></Panel>
+	</Panel>
+</Frame>

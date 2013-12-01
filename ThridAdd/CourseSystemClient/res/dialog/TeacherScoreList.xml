@@ -1,0 +1,21 @@
+<Frame name="frame" visible="true" close="exit" location="100,200" layout="border" pack="true" bgcolor="#00ffffff" >
+	<Panel  name="List" layout="border" enable="true" bgcolor="#00ffffff">
+        <ScrollPane name="stuList_scroll"  vertical="always" place="center" bgcolor="#00ffffff">
+            <Table name="score_list" columns="学号,姓名,总评">
+            </Table>
+        </ScrollPane>
+        <Panel name="button_place" layout="flow,right" place="south" bgcolor="#00ffffff">
+            <Button text="导入" name="input_file" place="south" bgcolor="#00ffffff"/>
+        <Button text="保存" name="save_score" place="south" bgcolor="#00ffffff"/>
+        </Panel>
+	</Panel>
+    <Panel place="east" vertical="needed" name="head" bgcolor="#00ffffff">
+        <Label text="      "/>
+    </Panel>
+    <Panel place="west" vertical="needed" name="head" bgcolor="#00ffffff">
+        <Label text="      "/>
+    </Panel>
+    <Panel place="north" vertical="needed" name="head" layout="flow,center" bgcolor="#00ffffff">
+        <Label text="学生列表"/>
+    </Panel>
+</Frame>

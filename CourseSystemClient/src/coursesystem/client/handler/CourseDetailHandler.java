@@ -2,12 +2,12 @@ package coursesystem.client.handler;
 
 import coursesystem.reply.CourseDetailReply;
 import coursesystem.request.CourseDetailRequest;
-import coursesystem.unit.Course;
 import zjs.smartevents.SmartEvents;
 import zjs.smartguis.SmartGuis;
 import zjs.smartguis.XMLContainer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 public class CourseDetailHandler
 {
@@ -24,33 +24,21 @@ public class CourseDetailHandler
 			JOptionPane.showMessageDialog(t_frame,t_reply.m_message,"错误",JOptionPane.ERROR_MESSAGE);
 			return;
 		}
-		t_reply.m_course.m_id=Course.getVisibleId(t_reply.m_course.m_id);
+		int t_index=t_reply.m_course.m_id.lastIndexOf('_');
+		if(t_index!=-1)
+			t_reply.m_course.m_id=t_reply.m_course.m_id.substring(0,t_index);
 		SmartGuis.find(p_gui,"id").set("text",t_reply.m_course.m_id);
 		SmartGuis.find(p_gui,"name").set("text",t_reply.m_course.m_name);
 		SmartGuis.find(p_gui,"type").set("text",t_reply.m_course.m_type);
 		SmartGuis.find(p_gui,"marks").set("text",t_reply.m_course.m_marks);
-		XMLContainer t_faculty=SmartGuis.find(p_gui,"faculty");
-		t_faculty.set("text",t_reply.m_faculty.m_name);
-		t_faculty.set("faculty_id",t_reply.m_faculty.m_id);
-		XMLContainer t_teacher=SmartGuis.find(p_gui,"teacher");
-		t_teacher.set("text",t_reply.m_teacher.m_name);
-		t_teacher.set("teacher_id",t_reply.m_teacher.m_id);
-		SmartGuis.find(p_gui,"students").set("text",""+(t_reply.m_course.m_student_ids.equals("")?0:t_reply.m_course.m_student_ids.split(",").length));
+		SmartGuis.find(p_gui,"faculty").set("text",t_reply.m_faculty.m_name);
+		SmartGuis.find(p_gui,"teacher").set("text",t_reply.m_teacher.m_name);
+		SmartGuis.find(p_gui,"students").set("text",""+t_reply.m_course.m_student_ids.split(",").length);
 		SmartGuis.find(p_gui,"description").set("text",t_reply.m_course.m_description);
 		XMLContainer t_frame=SmartGuis.find(p_gui,"frame");
 		((JFrame)t_frame).pack();
-	}
-	
-	public static String getFacultyId(XMLContainer p_gui)
-	{
-		XMLContainer t_faculty=SmartGuis.find(p_gui,"faculty");
-		return t_faculty.get("faculty_id");
-	}
-	
-	public static String getTeacherId(XMLContainer p_gui)
-	{
-		XMLContainer t_teacher=SmartGuis.find(p_gui,"teacher");
-		return t_teacher.get("teacher_id");
+		XMLContainer t_textarea=SmartGuis.find(p_gui,"description");
+		((JTextArea)t_textarea).setEditable(false);
 	}
 	
 }

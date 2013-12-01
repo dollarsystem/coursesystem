@@ -1,0 +1,102 @@
+﻿<Frame name="frame" title="教务系统-系统管理员" visible="true" close="exit" layout="border" center="true" size="850,740">
+	<Panel place="north" layout="border" bgcolor="#C1E5EF">
+		<Panel place="west" layout="flow,left" bgcolor="#C1E5EF"><Label icon="outer,res/image/NJUicon_small.png"/></Panel>
+		<Panel place="east" layout="flow,right" bgcolor="#C1E5EF"><Label icon="outer,res/image/title_small.png"/></Panel>
+	</Panel>
+	<ScrollPane place="center" vertical="needed">
+		<TabbedPane name="tabbed" tabPlace="top">
+			<Panel title="   学   生   列   表   " layout="border">
+				<Panel place="north">
+					<Label text=" 年 级:"/>
+					<ComboBox name="student_grade_combo">
+					</ComboBox>
+					<Label text=" 专 业:"/>
+					<ComboBox name="student_faculty_combo">
+					</ComboBox>
+					<Button text=" 查 询 " name="students_search" />
+				</Panel>
+				<ScrollPane place="center" vertical="needed">
+					<Table name="students_table" columns=" 学 号 , 姓 名 , 性 别 , 学 院 , 年 级 ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="student_new" text=" 新 建 " enable="true"/>
+					<Button name="student_detail" text=" 详 情 " enable="false"/>
+					<Button name="student_delete" text=" 删 除 " enable="false"/>
+				</Panel>
+			</Panel>
+			<Panel title="   教   师   列   表   " layout="border">
+				<Panel place="north">					
+					<Label text=" 学 院:"/>
+					<ComboBox name="teacher_faculty_combo">
+					</ComboBox>
+					<Button text=" 查 询 " name="teachers_search" />
+				</Panel>
+				<ScrollPane place="center" vertical="needed">
+					<Table name="teachers_table" columns=" 工 号 , 姓 名 , 性 别 , 学 院  ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="teacher_new" text=" 新 建 " enable="true"/>
+					<Button name="teacher_detail" text=" 详 情 " enable="false"/>
+					<Button name="teacher_delete" text=" 删 除 " enable="false"/>
+				</Panel>
+			</Panel>
+			<Panel title=" 院 系 教 务 员 列 表 " layout="border">
+				<Panel place="north">					
+					<Label text=" 学 院:"/>
+					<ComboBox name="dean_faculty_combo">
+					</ComboBox>
+					<Button text=" 查 询 " name="deans_search" />
+				</Panel>
+				<ScrollPane place="center" vertical="needed">
+					<Table name="deans_table" columns=" 工 号 , 姓 名 , 性 别 , 学 院 ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="dean_new" text=" 新 建 " enable="true"/>
+					<Button name="dean_detail" text=" 详 情 " enable="false"/>
+					<Button name="dean_delete" text=" 删 除 " enable="false"/>
+				</Panel>
+			</Panel>
+			<Panel title=" 教 务 处 老 师 列 表 " layout="border">
+				<ScrollPane place="center" vertical="needed">
+					<Table name="provests_table" columns=" 工 号 , 姓 名 , 性 别 ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="provest_new" text=" 新 建 " enable="true"/>
+					<Button name="provest_detail" text=" 详 情 " enable="false"/>
+					<Button name="provest_delete" text=" 删 除 " enable="false"/>
+				</Panel>
+			</Panel>
+			<Panel title=" 个 人 资 料 " layout="border">
+				<ScrollPane place="center" vertical="needed" >
+					<Panel layout="border">
+						<Panel place = "center" layout="grid,5,3">
+							<Panel layout="flow,center"><Label text=" 工 号 "/></Panel><Panel layout="flow,center"><Label name="info_id"/></Panel><Label/>
+							<Panel layout="flow,center"><Label text=" 姓 名 "/></Panel><Panel layout="flow,center"><Label name="info_name"/></Panel><Label/>
+							<Panel layout="flow,center"><Label text=" 性 别 "/></Panel><Panel layout="flow,center"><Label name="info_sex"/></Panel><Label/>							
+							<Panel layout="flow,center"><Label text=" 邮 箱 "/></Panel><Panel layout="flow,center"><Label name="info_mailbox"/></Panel><Panel layout="flow,center"><Button name="change_mailbox" text=" 修 改 "/></Panel>
+							<Panel layout="flow,center"><Label text=" 密 码 "/></Panel><Panel layout="flow,center"><Label name="info_password"/></Panel><Panel layout="flow,center"><Button name="change_password" text=" 修 改 "/></Panel>
+						</Panel>
+					</Panel>
+				</ScrollPane>
+			</Panel>
+			<Panel title=" 最 近 通 知 " layout="border">
+				<ScrollPane place="center" vertical="needed">
+					<Table name="notice_table" columns=" 发 送 时 间 , 发 件 人 , 内 容 摘 要 ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="read_notice" text=" 查 看 " enable="false"/>
+					<Button name="new_notice" text=" 发 布 "/>
+				</Panel>
+			</Panel>
+		</TabbedPane>
+	</ScrollPane>
+	<Panel place="south" layout="flow,left">
+		<Label text="最后一次操作："></Label>
+		<Label name="last_opt" text="暂无操作..."></Label>
+	</Panel>
+</Frame>

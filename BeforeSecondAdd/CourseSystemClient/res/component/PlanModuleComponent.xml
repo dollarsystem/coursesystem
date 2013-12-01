@@ -1,0 +1,19 @@
+<Panel layout="border" name="root">
+	<Panel place="north" layout="border">
+		<Label place="west" text="            "/>
+		<Label place="center" name="mark_range"/>
+		<Panel place="east" layout="flow,right">
+			<Label text=" 课 程 类 型 "/>
+			<ComboBox name="planmodule_types"/>
+			<Button text=" 查 询 " name="planmodule_search"/>
+		</Panel>
+	</Panel>
+	<ScrollPane place="center" vertical="needed">
+		<Table name="planmodule_table" columns=" 当 前 状 态 , 课 程 编 号 , 课 程 名 称 , 任 课 教 师 , 学 分 ">
+		</Table>
+	</ScrollPane>
+	<Panel place="south" layout="flow,right">
+		<Button text=" 详 情 " name="planmodule_detail" enable="false"/>
+		<Button text=" 添 加 " name="planmodule_add" enable="false"/>
+	</Panel>
+</Panel>

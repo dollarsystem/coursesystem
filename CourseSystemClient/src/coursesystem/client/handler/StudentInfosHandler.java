@@ -32,19 +32,10 @@ public class StudentInfosHandler
 		t_info_faculty.set("faculty_id",t_reply.m_faculty.m_id);
 		SmartGuis.find(p_gui,"info_grade").set("text",t_reply.m_student.m_grade);
 		SmartGuis.find(p_gui,"info_mailbox").set("text",t_reply.m_student.m_mailbox);
-		SmartGuis.find(p_gui,"info_password").set("text",ChangePasswordHandler.getVisiblePassword(t_reply.m_student.m_password));
-	}
-	
-	public static String getFacultyId(XMLContainer p_gui)
-	{
-		XMLContainer t_info_faculty=SmartGuis.find(p_gui,"info_faculty");
-		return t_info_faculty.get("faculty_id");
-	}
-	
-	public static String getStudentName(XMLContainer p_gui)
-	{
-		XMLContainer t_info_name=SmartGuis.find(p_gui,"info_name");
-		return t_info_name.get("text");
+		StringBuilder t_password=new StringBuilder(t_reply.m_student.m_password);
+		for(int t_i=t_password.length()-3;t_i>1;t_i--)
+			t_password.setCharAt(t_i,'*');
+		SmartGuis.find(p_gui,"info_password").set("text",t_password.toString());
 	}
 
 }

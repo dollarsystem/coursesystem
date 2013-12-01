@@ -2,9 +2,6 @@ package coursesystem.server.database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import coursesystem.unit.Faculty;
 
 class FacultyTable
@@ -25,7 +22,6 @@ class FacultyTable
 		t_faculty.m_id=p_faculty_id;
 		t_faculty.m_name=t_records.getString("name");
 		t_faculty.m_description=t_records.getString("description");
-		t_faculty.fillNull();
 		return t_faculty;
 	}
 	
@@ -44,23 +40,6 @@ class FacultyTable
 	{
 		String t_sql="delete from Faculty where id='"+p_faculty_id+"';";
 		Database.execute(t_sql);
-	}
-	
-	public static List<Faculty> getAllFacultys() throws SQLException
-	{
-		ArrayList<Faculty> t_facultys=new ArrayList<Faculty>();
-		String t_sql="select * from Faculty;";
-		ResultSet t_records=Database.execute(t_sql);
-		while(t_records.next())
-		{
-			Faculty t_faculty=new Faculty();
-			t_faculty.m_id=t_records.getString("id");
-			t_faculty.m_name=t_records.getString("name");
-			t_faculty.m_description=t_records.getString("description");
-			t_faculty.fillNull();
-			t_facultys.add(t_faculty);
-		}
-		return t_facultys;
 	}
 	
 }
