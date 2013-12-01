@@ -1,0 +1,25 @@
+<Frame name="frame" title="通知详情" visible="true" close="dispose" layout="border" center="true" pack="true">
+	<Panel place="center" layout="border">
+		<Panel layout="border" place="north">
+			<Panel layout="border" place="center">
+				<Label place="west" text="  收件人 ："/>
+				<TextField place="center" name="receiver_ids"/>
+			</Panel>
+		</Panel>
+		<Panel layout="border" place="center">
+			<Panel place="north" layout="flow,left">
+				<Label text=" 内    容 ："/>
+			</Panel>
+			<ScrollPane place="center">
+				<TextArea name="content" rows="20" columns="40"/>
+			</ScrollPane>
+		</Panel>
+		<Panel layout="flow,right" place="south">
+			<Button name="send" text=" 发 送 "/>
+		</Panel>
+	</Panel>
+	<Panel place="east"><Label/></Panel>
+	<Panel place="west"><Label/></Panel>
+	<Panel place="north"><Label/></Panel>
+	<Panel place="south"><Label/></Panel>
+</Frame>

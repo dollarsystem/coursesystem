@@ -26,6 +26,7 @@ final class TeacherTable
 		t_teacher.m_mailbox=t_results.getString("mailbox");
 		t_teacher.m_password=t_results.getString("password");
 		t_teacher.m_course_ids=t_results.getString("course_ids");
+		t_teacher.fillNull();
 		return t_teacher;
 	}
 	

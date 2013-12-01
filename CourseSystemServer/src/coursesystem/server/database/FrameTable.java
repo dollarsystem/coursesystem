@@ -21,6 +21,7 @@ class FrameTable
 		Frame t_frame=new Frame();
 		t_frame.m_id=p_frame_id;
 		t_frame.m_modules=t_records.getString("modules");
+		t_frame.fillNull();
 		return t_frame;
 	}
 	

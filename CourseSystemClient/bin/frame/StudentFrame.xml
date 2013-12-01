@@ -1,6 +1,7 @@
 ﻿<Frame name="frame" title="教务系统-学生" visible="true" close="exit" layout="border" center="true" size="850,740">
-	<Panel place="north" bgcolor="#00ffffff">
-		<Label icon="outer,res/image/Header.png"/>
+	<Panel place="north" layout="border" bgcolor="#C1E5EF">
+		<Panel place="west" layout="flow,left" bgcolor="#C1E5EF"><Label icon="outer,res/image/NJUicon_small.png"/></Panel>
+		<Panel place="east" layout="flow,right" bgcolor="#C1E5EF"><Label icon="outer,res/image/title_small.png"/></Panel>
 	</Panel>
 	<ScrollPane place="center" vertical="needed">
 		<TabbedPane name="tabbed" tabPlace="top">
@@ -18,40 +19,19 @@
 				<Panel place="north">
 					<Label text=" 学 期:"/>
 					<ComboBox name="term_combo">
-						<Option text="2013-2014年第一学期"/>
-						<Option text="2012-2013年第二学期"/>
-						<Option text="2012-2013年第一学期"/>
-						<Option text="2011-2012年第二学期"/>
-					</ComboBox>
-					<Label text=" 年 级:"/>
-					<ComboBox name="grade_combo">
-						<Option text="2013"/>
-						<Option text="2012"/>
-						<Option text="2011"/>
-						<Option text="2010"/>
-						<Option text="2009"/>
-						<Option text="2008"/>
-						<Option text="2007"/>
 					</ComboBox>
 					<Label text=" 专 业:"/>
 					<ComboBox name="faculty_combo">
-						<Option text="软件学院"/>
-						<Option text="数学系"/>
-						<Option text="医学院"/>
-						<Option text="历史学院"/>
-						<Option text="物理系"/>
-						<Option text="化学化工学院"/>
-						<Option text="生命科学院"/>
 					</ComboBox>
-					<Button text=" 查 询 " name="search" />
+					<Button text=" 查 询 " name="all_courses_search" />
 				</Panel>
 				<ScrollPane place="center" vertical="needed">
-					<Table name="all_class_table" columns=" 课 程 编 号 , 课 程 名 称, 任 课 教 师 , 课 程 类 型 , 开 课 院 系 , 学 分 ">
+					<Table name="all_courses_table" columns=" 课 程 编 号 , 课 程 名 称, 任 课 教 师 , 课 程 类 型 , 开 课 院 系 , 学 分 ">
 					</Table>
 				</ScrollPane>
 				<Panel place="south" layout="flow,right">
-					<Button name="all_class_detail" text=" 详 情 "/>
-					<Button name="select" text=" 选 课 "/>
+					<Button name="all_courses_detail" text=" 详 情 " enable="false"/>
+					<Button name="all_courses_select" text=" 选 课 " enable="false"/>
 				</Panel>
 			</Panel>
 			<Panel title=" 个 人 资 料 " layout="border">
@@ -61,29 +41,34 @@
 							<Panel layout="flow,center"><Label text=" 学 号 "/></Panel><Panel layout="flow,center"><Label name="info_id"/></Panel><Label/>
 							<Panel layout="flow,center"><Label text=" 姓 名 "/></Panel><Panel layout="flow,center"><Label name="info_name"/></Panel><Label/>
 							<Panel layout="flow,center"><Label text=" 性 别 "/></Panel><Panel layout="flow,center"><Label name="info_sex"/></Panel><Label/>
-							<Panel layout="flow,center"><Label text=" 学 院 "/></Panel><Panel layout="flow,center"><Label name="info_faculty"/></Panel><Panel layout="flow,center"><Button id="detail_faculty" text=" 详 情 "/></Panel>
+							<Panel layout="flow,center"><Label text=" 学 院 "/></Panel><Panel layout="flow,center"><Label name="info_faculty"/></Panel><Panel layout="flow,center"><Button name="faculty_detail" text=" 详 情 "/></Panel>
 							<Panel layout="flow,center"><Label text=" 年 级 "/></Panel><Panel layout="flow,center"><Label name="info_grade"/></Panel><Label/>
-							<Panel layout="flow,center"><Label text=" 邮 箱 "/></Panel><Panel layout="flow,center"><Label name="info_mailbox"/></Panel><Panel layout="flow,center"><Button id="change_email" text=" 修 改 "/></Panel>
-							<Panel layout="flow,center"><Label text=" 密 码 "/></Panel><Panel layout="flow,center"><Label name="info_password"/></Panel><Panel layout="flow,center"><Button id="change_password" text=" 修 改 "/></Panel>
+							<Panel layout="flow,center"><Label text=" 邮 箱 "/></Panel><Panel layout="flow,center"><Label name="info_mailbox"/></Panel><Panel layout="flow,center"><Button name="change_mailbox" text=" 修 改 "/></Panel>
+							<Panel layout="flow,center"><Label text=" 密 码 "/></Panel><Panel layout="flow,center"><Label name="info_password"/></Panel><Panel layout="flow,center"><Button name="change_password" text=" 修 改 "/></Panel>
 						</Panel>
 					</Panel>
 				</ScrollPane>
 			</Panel>
 			<Panel title=" 我 的 成 绩 " layout="border">
-				<Panel place="north" name="progress">
+				<Panel place="north" layout="flow,right">
+					<Label name="my_scores_marks"/>
 				</Panel>
 				<ScrollPane place="center" vertical="needed">
-					<Table name="score_table" columns=" 学 期 , 课 程 编 号 , 课 程 名 , 学 分 , 学 期 总 评 ">
-					</Table>
-				</ScrollPane>
-			</Panel>
-			<Panel title=" 最 近 通 知 " layout="border">
-				<ScrollPane place="center" vertical="needed">
-					<Table name="notice_table" columns=" 发 送 时 间 , 发 件 人 , 收 件 人 , 内 容 摘 要 ">
+					<Table name="my_scores_table" columns=" 学 期 , 课 程 名 程 , 课 程 类 型 , 学 分 , 学 期 总 评 ">
 					</Table>
 				</ScrollPane>
 				<Panel place="south" layout="flow,right">
-					<Button name="read_notice" text=" 查 看 "/>
+					<Button name="my_scores_process" text=" 学 业 进 度 "/>
+					<Button name="my_scores_detail" text=" 详 情 " enable="false"/>
+				</Panel>
+			</Panel>
+			<Panel title=" 最 近 通 知 " layout="border">
+				<ScrollPane place="center" vertical="needed">
+					<Table name="notice_table" columns=" 发 送 时 间 , 发 件 人 , 内 容 摘 要 ">
+					</Table>
+				</ScrollPane>
+				<Panel place="south" layout="flow,right">
+					<Button name="read_notice" text=" 查 看 " enable="false"/>
 					<Button name="new_notice" text=" 发 布 "/>
 				</Panel>
 			</Panel>

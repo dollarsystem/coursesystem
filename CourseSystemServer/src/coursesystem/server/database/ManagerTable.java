@@ -24,6 +24,7 @@ class ManagerTable
 		t_manager.m_sex=t_records.getString("sex");
 		t_manager.m_mailbox=t_records.getString("mailbox");
 		t_manager.m_password=t_records.getString("password");
+		t_manager.fillNull();
 		return t_manager;
 	}
 

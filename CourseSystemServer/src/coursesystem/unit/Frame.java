@@ -9,5 +9,11 @@ public class Frame implements Serializable
 	
 	public String m_id;
 	public String m_modules;
+	
+	public void fillNull()
+	{
+		m_id=m_id!=null?m_id:"";
+		m_modules=m_modules!=null?m_modules:"";
+	}
 
 }

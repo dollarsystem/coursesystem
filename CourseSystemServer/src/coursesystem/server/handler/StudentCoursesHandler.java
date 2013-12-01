@@ -21,7 +21,8 @@ public class StudentCoursesHandler
 				String[] t_course_ids=t_student.m_course_ids.split(",");
 				for(String t_course_id:t_course_ids)
 				{
-					Course t_course=Database.getCourse(t_course_id);
+					Course t_course=Database.getCourse(Course.getSelectableCourseId(t_course_id));
+					t_course.m_id=t_course_id;
 					t_reply.m_courses.add(t_course);
 				}
 			}

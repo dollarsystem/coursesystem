@@ -4,11 +4,11 @@
 		<Panel layout="flow,center"><Label text=" 名 称 "/></Panel><Panel layout="flow,center"><Label name="name"/></Panel><Label/>
 		<Panel layout="flow,center"><Label text=" 类 型 "/></Panel><Panel layout="flow,center"><Label name="type"/></Panel><Label/>
 		<Panel layout="flow,center"><Label text=" 学 分 "/></Panel><Panel layout="flow,center"><Label name="marks"/></Panel><Label/>
-		<Panel layout="flow,center"><Label text=" 院 系 "/></Panel><Panel layout="flow,center"><Label name="faculty"/></Panel><Panel layout="flow,center"><Button id="detail_faculty" text=" 详 情 "/></Panel>
-		<Panel layout="flow,center"><Label text=" 老 师 "/></Panel><Panel layout="flow,center"><Label name="teacher"/></Panel><Panel layout="flow,center"><Button id="detail_teacher" text=" 详 情 "/></Panel>
+		<Panel layout="flow,center"><Label text=" 院 系 "/></Panel><Panel layout="flow,center"><Label name="faculty"/></Panel><Panel layout="flow,center"><Button name="faculty_detail" text=" 详 情 "/></Panel>
+		<Panel layout="flow,center"><Label text=" 老 师 "/></Panel><Panel layout="flow,center"><Label name="teacher"/></Panel><Panel layout="flow,center"><Button name="teacher_detail" text=" 详 情 "/></Panel>
 		<Panel layout="flow,center"><Label text=" 人 数 "/></Panel><Panel layout="flow,center"><Label name="students"/></Panel><Label/>
 	</Panel>
 	<Panel place="south" layout="border">
-		<Panel place="center"><TextArea name="description" columns="20"/></Panel>
+		<Panel place="center"><TextArea name="description"/></Panel>
 	</Panel>
 </Frame>

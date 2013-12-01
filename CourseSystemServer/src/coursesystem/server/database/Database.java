@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
 import coursesystem.unit.Course;
 import coursesystem.unit.Dean;
 import coursesystem.unit.Faculty;
@@ -50,6 +52,16 @@ public final class Database
 		return CourseTable.getCourse(p_course_id);
 	}
 	
+	public synchronized static List<Course> getCourseOf(String p_faculty_id) throws SQLException
+	{
+		return CourseTable.getCourseOf(p_faculty_id);
+	}
+	
+	public synchronized static List<Course> getCoursesOf(String p_term,String p_faculty_id) throws SQLException
+	{
+		return CourseTable.getCoursesOf(p_term,p_faculty_id);
+	}
+	
 	public synchronized static void setCourse(Course p_course) throws SQLException
 	{
 		CourseTable.setCourse(p_course);
@@ -90,6 +102,11 @@ public final class Database
 		FacultyTable.removeFaculty(p_faculty_id);
 	}
 	
+	public synchronized static List<Faculty> getAllFacultys() throws SQLException
+	{
+		return FacultyTable.getAllFacultys();
+	}
+	
 	public synchronized static Frame getFrame(String p_frame_id) throws SQLException
 	{
 		return FrameTable.getFrame(p_frame_id);
@@ -123,6 +140,11 @@ public final class Database
 	public synchronized static Notice getNotice(String p_notice_id) throws SQLException
 	{
 		return NoticeTable.getNotice(p_notice_id);
+	}
+	
+	public synchronized static List<Notice> getNoticeTo(String p_type,String p_id) throws SQLException
+	{
+		return NoticeTable.getNoticeTo(p_type,p_id);
 	}
 	
 	public synchronized static void setNotice(Notice p_notice) throws SQLException
@@ -168,6 +190,11 @@ public final class Database
 	public synchronized static Student getStudent(String p_student_id) throws SQLException
 	{
 		return StudentTable.getStudent(p_student_id);
+	}
+	
+	public synchronized static Student getStudentDemo(String p_faculty_id,String p_grade) throws SQLException
+	{
+		return StudentTable.getStudentDemo(p_faculty_id,p_grade);
 	}
 	
 	public synchronized static void setStudent(Student p_student) throws SQLException

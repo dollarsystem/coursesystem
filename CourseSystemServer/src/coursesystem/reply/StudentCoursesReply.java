@@ -1,6 +1,8 @@
 package coursesystem.reply;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import coursesystem.reply.superclass.Reply;
 import coursesystem.unit.Course;
 
@@ -9,6 +11,6 @@ public class StudentCoursesReply extends Reply
 
 	private static final long serialVersionUID=0;
 	
-	public ArrayList<Course> m_courses=new ArrayList<Course>();
+	public List<Course> m_courses=new ArrayList<Course>();
 
 }

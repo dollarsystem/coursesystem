@@ -1,0 +1,9 @@
+<Frame name="frame" title="院系详情" visible="true" close="dispose" layout="border" pack="true"  center="true">
+	<Panel place="center" layout="grid,2,2">
+		<Panel layout="flow,center"><Label text=" 编 号 "/></Panel><Panel layout="flow,center"><Label name="id"/></Panel>
+		<Panel layout="flow,center"><Label text=" 名 称 "/></Panel><Panel layout="flow,center"><Label name="name"/></Panel>
+	</Panel>
+	<Panel place="south" layout="border">
+		<Panel place="center"><TextArea name="description" editable="false"/></Panel>
+	</Panel>
+</Frame>

@@ -1,0 +1,31 @@
+<Frame name="frame" title="通知详情" visible="true" close="dispose" layout="border" center="true" pack="true">
+	<Panel place="center" layout="border">
+		<Panel layout="grid,2,1" place="north">
+			<Panel layout="flow,left">
+				<Label text=" 时    间 ："/>
+				<Label name="date"/>
+			</Panel>
+			<Panel layout="flow,left">
+				<Label text=" 发件人 ："/>
+				<Label name="sender"/>
+			</Panel>
+		</Panel>
+		<Panel layout="border" place="center">
+			<Panel place="north" layout="flow,left">
+				<Label text=" 内    容 ："/>
+			</Panel>
+			<ScrollPane place="center">
+				<TextArea name="content" rows="20" columns="40" editable="false"/>
+			</ScrollPane>
+		</Panel>
+		<Panel layout="flow,right" place="south">
+			<Button name="reply" text=" 回 复 "/>
+		</Panel>
+	</Panel>
+	<Panel place="east"><Label/></Panel>
+	<Panel place="west"><Label/></Panel>
+	<Panel place="north"><Label/></Panel>
+	<Panel place="south"><Label/></Panel>
+</Frame>
+
+

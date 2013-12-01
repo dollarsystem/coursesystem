@@ -24,6 +24,7 @@ class ProvestTable
 		t_provest.m_sex=t_records.getString("sex");
 		t_provest.m_mailbox=t_records.getString("mailbox");
 		t_provest.m_password=t_records.getString("password");
+		t_provest.fillNull();
 		return t_provest;
 	}
 
